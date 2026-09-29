@@ -1,14 +1,29 @@
-# BrightDesk School Supplies — Updated
+# BrightDesk School Supplies — GitHub Pages Ready
 
-This version includes:
-- Visible site logo in the header and browser favicon.
-- Local product images, so they load reliably on GitHub Pages.
-- Current retail price references researched in September 2026.
-- Product search, category filters and cart interface.
-- Support and school-supply advisory sections.
+This is a complete static storefront designed to work directly on GitHub Pages.
 
-## Important
-Retail prices are reference prices and can change. Replace the demo phone number and email before publishing. This static demo does not process real payments.
+## Important upload instructions
 
-## GitHub Pages
-Upload the CONTENTS of this folder to the repository root. `index.html`, `style.css`, `script.js`, `favicon.png` and the `images` folder must all be at the top level.
+1. Extract the ZIP on your computer.
+2. Open the extracted folder.
+3. Upload **the files inside the folder** to the root of your GitHub repository.
+4. `index.html` must be visible at the top level of the repository.
+5. Keep the `assets` folder exactly as it is.
+6. In GitHub: Settings → Pages → Deploy from a branch → `main` / `(root)` → Save.
+
+## Included
+
+- Visible BrightDesk logo in the header and footer.
+- Browser tab favicon.
+- 30 school-supply products with local images and retail reference prices.
+- Search and category filters.
+- Shopping cart stored in the browser.
+- Responsive design for phone, tablet and desktop.
+- Support and school-supply advice sections.
+- `.nojekyll` for simple GitHub Pages deployment.
+
+## Before launching publicly
+
+Replace the demo phone number and email address with your real business details. The checkout is intentionally a demo and does not process payments.
+
+Prices are retail references observed in September 2026 and may change due to promotions, location, availability or seller changes.

@@ -1,60 +1,87 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BrightDesk School Supplies</title><link rel="icon" type="image/png" href="favicon.png"><link rel="stylesheet" href="style.css"></head>
-<body><header><a class="brand" href="#"><img src="images/logo.jpg" alt="BrightDesk logo"><b>BrightDesk</b></a>
-<nav><a href="#shop">Shop</a><a href="#advice">Advice</a><a href="#support">Support</a></nav><button class="cart" onclick="toggleCart()">Cart <b id="count">0</b></button></header>
-<section class="hero"><div><span>BACK TO SCHOOL</span><h1>School supplies for every <em>big idea.</em></h1><p>Popular classroom essentials with clear prices, simple shopping and friendly support.</p><a href="#shop">Shop now</a></div><img src="images/logo.jpg" alt="BrightDesk school supplies"></section>
-<section class="features"><div>🚚<b>Fast shipping</b><small>Easy ordering</small></div><div>📚<b>Wide selection</b><small>School essentials</small></div><div>💬<b>Personal advice</b><small>Help choosing supplies</small></div><div>🔒<b>Secure-ready</b><small>Connect your checkout</small></div></section>
-<main id="shop"><div class="head"><div><span>SHOP ESSENTIALS</span><h2>Popular products</h2></div><input id="search" oninput="filter()" placeholder="Search products..."></div>
-<div class="filters"><button onclick="cat='All';filter()">All</button><button onclick="cat='Notebooks';filter()">Notebooks</button><button onclick="cat='Art';filter()">Art</button><button onclick="cat='Craft';filter()">Craft</button><button onclick="cat='Math';filter()">Math</button></div>
-<div class="grid"><article class="product" data-cat="Art">
-<img src="images/product-1.jpg" alt="Crayola Colored Pencils, 12 Count" loading="lazy">
-<div class="info"><span>Art</span><h3>Crayola Colored Pencils, 12 Count</h3><div class="price">$0.97</div>
-<button onclick="addToCart('Crayola Colored Pencils, 12 Count',0.97)">Add to cart</button></div></article>
-<article class="product" data-cat="Art">
-<img src="images/product-2.jpg" alt="Crayola Classic Crayons, 24 Count" loading="lazy">
-<div class="info"><span>Art</span><h3>Crayola Classic Crayons, 24 Count</h3><div class="price">$1.59</div>
-<button onclick="addToCart('Crayola Classic Crayons, 24 Count',1.59)">Add to cart</button></div></article>
-<article class="product" data-cat="Notebooks">
-<img src="images/product-3.jpg" alt="Five Star 1-Subject Notebook" loading="lazy">
-<div class="info"><span>Notebooks</span><h3>Five Star 1-Subject Notebook</h3><div class="price">$2.99</div>
-<button onclick="addToCart('Five Star 1-Subject Notebook',2.99)">Add to cart</button></div></article>
-<article class="product" data-cat="Notebooks">
-<img src="images/product-4.jpg" alt="Five Star 3-Subject Notebook" loading="lazy">
-<div class="info"><span>Notebooks</span><h3>Five Star 3-Subject Notebook</h3><div class="price">$4.79</div>
-<button onclick="addToCart('Five Star 3-Subject Notebook',4.79)">Add to cart</button></div></article>
-<article class="product" data-cat="Notebooks">
-<img src="images/product-5.jpg" alt="Five Star 5-Subject Notebook" loading="lazy">
-<div class="info"><span>Notebooks</span><h3>Five Star 5-Subject Notebook</h3><div class="price">$6.99</div>
-<button onclick="addToCart('Five Star 5-Subject Notebook',6.99)">Add to cart</button></div></article>
-<article class="product" data-cat="Craft">
-<img src="images/product-6.jpg" alt="Elmer's Purple Glue Sticks, 2 Count" loading="lazy">
-<div class="info"><span>Craft</span><h3>Elmer's Purple Glue Sticks, 2 Count</h3><div class="price">$1.68</div>
-<button onclick="addToCart('Elmer\'s Purple Glue Sticks, 2 Count',1.68)">Add to cart</button></div></article>
-<article class="product" data-cat="Craft">
-<img src="images/product-7.jpg" alt="Elmer's Purple Glue Sticks, 6 Count" loading="lazy">
-<div class="info"><span>Craft</span><h3>Elmer's Purple Glue Sticks, 6 Count</h3><div class="price">$3.53</div>
-<button onclick="addToCart('Elmer\'s Purple Glue Sticks, 6 Count',3.53)">Add to cart</button></div></article>
-<article class="product" data-cat="Craft">
-<img src="images/product-8.jpg" alt="Fiskars Kids School Scissors, 5 in." loading="lazy">
-<div class="info"><span>Craft</span><h3>Fiskars Kids School Scissors, 5 in.</h3><div class="price">$3.70</div>
-<button onclick="addToCart('Fiskars Kids School Scissors, 5 in.',3.7)">Add to cart</button></div></article>
-<article class="product" data-cat="Craft">
-<img src="images/product-9.jpg" alt="Fiskars Student Scissors, 7 in." loading="lazy">
-<div class="info"><span>Craft</span><h3>Fiskars Student Scissors, 7 in.</h3><div class="price">$4.48</div>
-<button onclick="addToCart('Fiskars Student Scissors, 7 in.',4.48)">Add to cart</button></div></article>
-<article class="product" data-cat="Math">
-<img src="images/product-10.jpg" alt="TI-30XIIS Scientific Calculator" loading="lazy">
-<div class="info"><span>Math</span><h3>TI-30XIIS Scientific Calculator</h3><div class="price">$13.88</div>
-<button onclick="addToCart('TI-30XIIS Scientific Calculator',13.88)">Add to cart</button></div></article>
-<article class="product" data-cat="Art">
-<img src="images/product-11.jpg" alt="Crayola Twistables Colored Pencils, 12 Count" loading="lazy">
-<div class="info"><span>Art</span><h3>Crayola Twistables Colored Pencils, 12 Count</h3><div class="price">$4.97</div>
-<button onclick="addToCart('Crayola Twistables Colored Pencils, 12 Count',4.97)">Add to cart</button></div></article>
-<article class="product" data-cat="Notebooks">
-<img src="images/product-12.jpg" alt="Five Star 5-Subject College Ruled Notebook" loading="lazy">
-<div class="info"><span>Notebooks</span><h3>Five Star 5-Subject College Ruled Notebook</h3><div class="price">$6.97</div>
-<button onclick="addToCart('Five Star 5-Subject College Ruled Notebook',6.97)">Add to cart</button></div></article></div><p class="price-note">Price reference updated September 2026. Retail prices can change and may vary by seller, color, location or promotion.</p></main>
-<section class="advice" id="advice"><div><span>FREE GUIDANCE</span><h2>Need a school supply list?</h2><p>We can help parents, students and teachers choose supplies by grade, subject or budget.</p><a href="#support">Talk to an advisor</a></div><div class="card"><b>School Supply Advisor</b><p>Product guidance • School lists • Bulk orders</p><strong>1-800-555-0148</strong><small>Demo number — replace before launch</small></div></section>
-<section class="support" id="support"><h2>Customer Support</h2><p>Questions about products, orders or school lists?</p><a href="tel:+18005550148">☎ 1-800-555-0148</a><a href="mailto:support@brightdesk.example">✉ support@brightdesk.example</a><small>Demo contact details. Replace with your real business information.</small></section>
-<footer><img src="images/logo.jpg" alt=""><b>BrightDesk School Supplies</b><p>© 2026 BrightDesk. All rights reserved.</p></footer>
-<aside id="panel"><button onclick="toggleCart()">×</button><h2>Your cart</h2><div id="items"></div><h3>Total: $<span id="total">0.00</span></h3></aside><script src="script.js"></script></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6d3ce7">
+  <meta name="description" content="BrightDesk School Supplies — backpacks, notebooks, art supplies, study tools and classroom essentials.">
+  <title>BrightDesk School Supplies</title>
+  <link rel="icon" href="./favicon.png" type="image/png">
+  <link rel="stylesheet" href="./assets/styles.css">
+</head>
+<body>
+  <div class="announcement">Back-to-school essentials • Friendly support • Prices shown in USD</div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="BrightDesk home">
+      <img src="./assets/images/logo.png" alt="BrightDesk logo"><span><b>BrightDesk</b><small>School Supplies</small></span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation">☰</button>
+    <nav id="nav"><a href="#shop">Shop</a><a href="#categories">Categories</a><a href="#advice">School Advice</a><a href="#support">Support</a></nav>
+    <button class="cart-btn" id="cartBtn">Cart <span id="cartCount">0</span></button>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="eyebrow">READY FOR SCHOOL</span>
+        <h1>Everything for a brighter school day.</h1>
+        <p>Shop notebooks, writing tools, art supplies, backpacks, lunch gear and organization essentials in one clean, easy storefront.</p>
+        <div class="hero-actions"><a class="btn primary" href="#shop">Shop supplies</a><a class="btn secondary" href="#support">Get support</a></div>
+        <div class="mini-trust"><span>✓ Wide selection</span><span>✓ Clear prices</span><span>✓ Personal guidance</span></div>
+      </div>
+      <div class="hero-visual"><img src="./assets/images/hero.jpg" alt="BrightDesk school supplies collection"></div>
+    </section>
+
+    <section class="perks">
+      <article><div>🚚</div><b>Fast & Simple</b><small>Easy browsing and ordering</small></article>
+      <article><div>🎒</div><b>School Ready</b><small>Essentials for every grade</small></article>
+      <article><div>💬</div><b>Personal Support</b><small>Help choosing supplies</small></article>
+      <article><div>⭐</div><b>Popular Brands</b><small>Familiar classroom favorites</small></article>
+    </section>
+
+    <section class="section" id="categories">
+      <div class="section-title"><span class="eyebrow">SHOP BY NEED</span><h2>Popular categories</h2></div>
+      <div class="category-grid" id="categoryGrid"></div>
+    </section>
+
+    <section class="section shop-section" id="shop">
+      <div class="shop-head">
+        <div><span class="eyebrow">CURRENT RETAIL REFERENCES</span><h2>School essentials</h2><p>Reference prices checked in September 2026. Promotions and availability can change.</p></div>
+        <label class="search"><span>⌕</span><input id="searchInput" type="search" placeholder="Search products" autocomplete="off"></label>
+      </div>
+      <div class="filter-row" id="filterRow"></div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="source-note">Price references are based on recent Target listings and category pages. BrightDesk is a demo storefront and is not affiliated with Target or the listed brands.</div>
+    </section>
+
+    <section class="advice" id="advice">
+      <div><span class="eyebrow">FREE SCHOOL-SUPPLY GUIDANCE</span><h2>Not sure what your student needs?</h2><p>We can help build a practical supply list by grade, subject or budget — useful for parents, students, teachers and bulk classroom orders.</p><a class="btn primary" href="#support">Talk to an advisor</a></div>
+      <div class="advice-card"><div class="advisor-icon">📚</div><h3>School Supply Advisor</h3><ul><li>Grade-based supply lists</li><li>Budget-friendly alternatives</li><li>Classroom & bulk-order guidance</li></ul><a href="tel:+18005550148">☎ 1-800-555-0148</a><small>Demo support number — replace before launch.</small></div>
+    </section>
+
+    <section class="support section" id="support">
+      <div class="section-title"><span class="eyebrow">CUSTOMER CARE</span><h2>Support when you need it</h2><p>Questions about products, orders, returns or school lists? Contact the BrightDesk support team.</p></div>
+      <div class="support-grid">
+        <a href="tel:+18005550148"><span>☎</span><b>Call Support</b><small>1-800-555-0148</small></a>
+        <a href="mailto:support@brightdesk.example"><span>✉</span><b>Email Support</b><small>support@brightdesk.example</small></a>
+        <a href="#advice"><span>🎓</span><b>School Advice</b><small>Get product guidance</small></a>
+      </div>
+      <p class="demo-warning">The phone number and email above are placeholders. Replace them with your real business contact information before publishing.</p>
+    </section>
+  </main>
+
+  <footer><div class="footer-brand"><img src="./assets/images/logo.png" alt=""><div><b>BrightDesk</b><small>School Supplies</small></div></div><p>School essentials made simple.</p><p>© 2026 BrightDesk School Supplies. Demo storefront.</p></footer>
+
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping cart">
+    <div class="drawer-head"><h2>Your cart</h2><button id="closeCart" aria-label="Close cart">×</button></div>
+    <div id="cartItems" class="cart-items"></div>
+    <div class="cart-summary"><div><span>Items</span><b id="cartItemCount">0</b></div><div><span>Subtotal</span><b id="cartSubtotal">$0.00</b></div></div>
+    <button class="checkout" id="checkoutBtn">Demo checkout</button><small class="checkout-note">This demo does not process payments.</small>
+  </aside>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script>window.BRIGHTDESK_PRODUCTS = [{"name": "Crayola 24ct Crayons", "price": 0.5, "cat": "Art", "kind": "crayons", "badge": "Sale", "img": "assets/images/product-01.jpg"}, {"name": "Crayola 12ct Colored Pencils", "price": 0.99, "cat": "Art", "kind": "colored_pencils", "badge": "Sale", "img": "assets/images/product-02.jpg"}, {"name": "Crayola 10ct Washable Markers", "price": 2.99, "cat": "Art", "kind": "markers", "badge": "Sale", "img": "assets/images/product-03.jpg"}, {"name": "Expo 4pk Dry Erase Markers", "price": 4.49, "cat": "Writing", "kind": "markers", "badge": "Popular", "img": "assets/images/product-04.jpg"}, {"name": "Sharpie 4pk Highlighters", "price": 2.49, "cat": "Writing", "kind": "highlighters", "badge": "Sale", "img": "assets/images/product-05.jpg"}, {"name": "Ticonderoga 12ct #2 Pencils", "price": 2.99, "cat": "Writing", "kind": "pencils", "badge": "Classic", "img": "assets/images/product-06.jpg"}, {"name": "Elmer's 6pk Purple Glue Sticks", "price": 2.99, "cat": "Craft", "kind": "glue", "badge": "Sale", "img": "assets/images/product-07.jpg"}, {"name": "Fiskars Kids 5in Blunt Scissors", "price": 1.59, "cat": "Craft", "kind": "scissors", "badge": "Sale", "img": "assets/images/product-08.jpg"}, {"name": "Fiskars Kids Super Scissors", "price": 5.99, "cat": "Craft", "kind": "scissors", "badge": "Kids", "img": "assets/images/product-09.jpg"}, {"name": "Five Star 1-Subject Notebook", "price": 2.99, "cat": "Notebooks", "kind": "notebook", "badge": "Popular", "img": "assets/images/product-10.jpg"}, {"name": "Five Star 3-Subject Notebook", "price": 4.79, "cat": "Notebooks", "kind": "notebook", "badge": "School", "img": "assets/images/product-11.jpg"}, {"name": "Five Star 5-Subject Notebook", "price": 6.99, "cat": "Notebooks", "kind": "notebook", "badge": "Best Value", "img": "assets/images/product-12.jpg"}, {"name": "Five Star Graph-Ruled Notebook", "price": 2.99, "cat": "Notebooks", "kind": "graph_notebook", "badge": "STEM", "img": "assets/images/product-13.jpg"}, {"name": "up&up 1in 3-Ring Binder", "price": 4.39, "cat": "Organization", "kind": "binder", "badge": "School", "img": "assets/images/product-14.jpg"}, {"name": "up&up 0.5in Ring Binder", "price": 3.19, "cat": "Organization", "kind": "binder", "badge": "Compact", "img": "assets/images/product-15.jpg"}, {"name": "up&up 2-Pocket Plastic Folder", "price": 0.5, "cat": "Organization", "kind": "folder", "badge": "Sale", "img": "assets/images/product-16.jpg"}, {"name": "up&up 100ct 3x5 Index Cards", "price": 0.79, "cat": "Study", "kind": "cards", "badge": "Sale", "img": "assets/images/product-17.jpg"}, {"name": "Post-it 5pk Super Sticky Notes", "price": 5.99, "cat": "Study", "kind": "sticky", "badge": "Popular", "img": "assets/images/product-18.jpg"}, {"name": "Post-it 5pk Transparent Notes", "price": 12.99, "cat": "Study", "kind": "sticky", "badge": "Study", "img": "assets/images/product-19.jpg"}, {"name": "up&up 12in Wood Ruler", "price": 0.89, "cat": "Math", "kind": "ruler", "badge": "Basic", "img": "assets/images/product-20.jpg"}, {"name": "up&up 12in Metal Ruler", "price": 1.99, "cat": "Math", "kind": "ruler", "badge": "Durable", "img": "assets/images/product-21.jpg"}, {"name": "up&up 10pc Math Tool Kit", "price": 7.99, "cat": "Math", "kind": "mathkit", "badge": "STEM", "img": "assets/images/product-22.jpg"}, {"name": "up&up Hard-Sided Pencil Case", "price": 3.99, "cat": "Accessories", "kind": "pouch", "badge": "Popular", "img": "assets/images/product-23.jpg"}, {"name": "up&up Mesh Binder Pouch", "price": 2.54, "cat": "Accessories", "kind": "pouch", "badge": "Sale", "img": "assets/images/product-24.jpg"}, {"name": "up&up 2pk Water-Resistant Zip Pouches", "price": 2.99, "cat": "Accessories", "kind": "pouch", "badge": "2 Pack", "img": "assets/images/product-25.jpg"}, {"name": "Bentgo Kids Lunch Bag", "price": 24.99, "cat": "Lunch", "kind": "lunchbag", "badge": "Insulated", "img": "assets/images/product-26.jpg"}, {"name": "Bentgo Kids 5-Compartment Lunch Box", "price": 29.99, "cat": "Lunch", "kind": "lunchbox", "badge": "Leakproof", "img": "assets/images/product-27.jpg"}, {"name": "JanSport Big Student Backpack", "price": 61.99, "cat": "Backpacks", "kind": "backpack", "badge": "Popular", "img": "assets/images/product-28.jpg"}, {"name": "JanSport Cool Student Backpack", "price": 66.99, "cat": "Backpacks", "kind": "backpack", "badge": "Laptop", "img": "assets/images/product-29.jpg"}, {"name": "Expo 4pk Magnetic Dry Erase Markers", "price": 5.79, "cat": "Writing", "kind": "markers", "badge": "Magnetic", "img": "assets/images/product-30.jpg"}];</script>
+  <script src="./assets/app.js"></script>
+</body>
+</html>

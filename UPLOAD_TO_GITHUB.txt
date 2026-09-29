@@ -1,0 +1,3 @@
+BRIGHTDESK — GITHUB UPLOAD
+
+Upload index.html, favicon.png, .nojekyll, README.md, PRICE_SOURCES.md, and the entire assets folder to the ROOT of your repository. Do not upload only this ZIP.
