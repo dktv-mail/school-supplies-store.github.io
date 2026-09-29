@@ -1,127 +1,60 @@
-<!doctype html>
-<html lang="en">
-<head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>BrightDesk School Supplies</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<header>
-  <a class="brand" href="#">🎒 <span>BrightDesk</span></a>
-  <nav><a href="#shop">Shop</a><a href="#support">Support</a><a href="#advice">School Advice</a></nav>
-  <button class="cart" onclick="openCart()">Cart <b id="count">0</b></button>
-</header>
-<section class="hero">
- <div><span class="eyebrow">BACK TO SCHOOL • EVERY DAY</span>
- <h1>Everything students need to <em>learn, create & grow.</em></h1>
- <p>Affordable school essentials for classrooms, homework and creative projects.</p>
- <a class="cta" href="#shop">Shop supplies</a></div>
- <div class="hero-art">✏️<br>🎒 📚<br>🎨 📐</div>
-</section>
-<section class="benefits"><div>🚚 <b>Fast Shipping</b><small>On qualifying orders</small></div><div>🔒 <b>Secure Checkout</b><small>Shop with confidence</small></div><div>💬 <b>Real Support</b><small>We’re here to help</small></div><div>⭐ <b>School Ready</b><small>Essentials in one place</small></div></section>
-<main id="shop">
- <div class="section-head"><div><span class="eyebrow">OUR COLLECTION</span><h2>Popular school supplies</h2></div><input id="search" placeholder="Search products..." oninput="filterProducts()"></div>
- <div class="filters"><button onclick="setCat('All')">All</button><button onclick="setCat('Writing')">Writing</button><button onclick="setCat('Notebooks')">Notebooks</button><button onclick="setCat('Art')">Art</button><button onclick="setCat('Organization')">Organization</button><button onclick="setCat('Accessories')">Accessories</button></div>
- <div class="grid" id="products"><article class="product" data-cat="Backpacks">
-<img src="images/p1.jpg" alt="Classic Backpack" loading="lazy">
-<div class="pad"><span class="tag">Backpacks</span><h3>Classic Backpack</h3><p class="price">$24.99</p>
-<button onclick="addToCart('Classic Backpack', '$24.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Backpacks">
-<img src="images/p2.jpg" alt="Kids Backpack" loading="lazy">
-<div class="pad"><span class="tag">Backpacks</span><h3>Kids Backpack</h3><p class="price">$19.99</p>
-<button onclick="addToCart('Kids Backpack', '$19.99')">Add to cart</button></div></article>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>BrightDesk School Supplies</title><link rel="icon" type="image/png" href="favicon.png"><link rel="stylesheet" href="style.css"></head>
+<body><header><a class="brand" href="#"><img src="images/logo.jpg" alt="BrightDesk logo"><b>BrightDesk</b></a>
+<nav><a href="#shop">Shop</a><a href="#advice">Advice</a><a href="#support">Support</a></nav><button class="cart" onclick="toggleCart()">Cart <b id="count">0</b></button></header>
+<section class="hero"><div><span>BACK TO SCHOOL</span><h1>School supplies for every <em>big idea.</em></h1><p>Popular classroom essentials with clear prices, simple shopping and friendly support.</p><a href="#shop">Shop now</a></div><img src="images/logo.jpg" alt="BrightDesk school supplies"></section>
+<section class="features"><div>🚚<b>Fast shipping</b><small>Easy ordering</small></div><div>📚<b>Wide selection</b><small>School essentials</small></div><div>💬<b>Personal advice</b><small>Help choosing supplies</small></div><div>🔒<b>Secure-ready</b><small>Connect your checkout</small></div></section>
+<main id="shop"><div class="head"><div><span>SHOP ESSENTIALS</span><h2>Popular products</h2></div><input id="search" oninput="filter()" placeholder="Search products..."></div>
+<div class="filters"><button onclick="cat='All';filter()">All</button><button onclick="cat='Notebooks';filter()">Notebooks</button><button onclick="cat='Art';filter()">Art</button><button onclick="cat='Craft';filter()">Craft</button><button onclick="cat='Math';filter()">Math</button></div>
+<div class="grid"><article class="product" data-cat="Art">
+<img src="images/product-1.jpg" alt="Crayola Colored Pencils, 12 Count" loading="lazy">
+<div class="info"><span>Art</span><h3>Crayola Colored Pencils, 12 Count</h3><div class="price">$0.97</div>
+<button onclick="addToCart('Crayola Colored Pencils, 12 Count',0.97)">Add to cart</button></div></article>
+<article class="product" data-cat="Art">
+<img src="images/product-2.jpg" alt="Crayola Classic Crayons, 24 Count" loading="lazy">
+<div class="info"><span>Art</span><h3>Crayola Classic Crayons, 24 Count</h3><div class="price">$1.59</div>
+<button onclick="addToCart('Crayola Classic Crayons, 24 Count',1.59)">Add to cart</button></div></article>
 <article class="product" data-cat="Notebooks">
-<img src="images/p3.jpg" alt="Notebook Set" loading="lazy">
-<div class="pad"><span class="tag">Notebooks</span><h3>Notebook Set</h3><p class="price">$8.99</p>
-<button onclick="addToCart('Notebook Set', '$8.99')">Add to cart</button></div></article>
+<img src="images/product-3.jpg" alt="Five Star 1-Subject Notebook" loading="lazy">
+<div class="info"><span>Notebooks</span><h3>Five Star 1-Subject Notebook</h3><div class="price">$2.99</div>
+<button onclick="addToCart('Five Star 1-Subject Notebook',2.99)">Add to cart</button></div></article>
 <article class="product" data-cat="Notebooks">
-<img src="images/p4.jpg" alt="Spiral Notebook" loading="lazy">
-<div class="pad"><span class="tag">Notebooks</span><h3>Spiral Notebook</h3><p class="price">$4.49</p>
-<button onclick="addToCart('Spiral Notebook', '$4.49')">Add to cart</button></div></article>
-<article class="product" data-cat="Art">
-<img src="images/p5.jpg" alt="Colored Pencils" loading="lazy">
-<div class="pad"><span class="tag">Art</span><h3>Colored Pencils</h3><p class="price">$7.99</p>
-<button onclick="addToCart('Colored Pencils', '$7.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Art">
-<img src="images/p6.jpg" alt="Crayon Pack" loading="lazy">
-<div class="pad"><span class="tag">Art</span><h3>Crayon Pack</h3><p class="price">$5.99</p>
-<button onclick="addToCart('Crayon Pack', '$5.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Art">
-<img src="images/p7.jpg" alt="Watercolor Set" loading="lazy">
-<div class="pad"><span class="tag">Art</span><h3>Watercolor Set</h3><p class="price">$12.99</p>
-<button onclick="addToCart('Watercolor Set', '$12.99')">Add to cart</button></div></article>
+<img src="images/product-4.jpg" alt="Five Star 3-Subject Notebook" loading="lazy">
+<div class="info"><span>Notebooks</span><h3>Five Star 3-Subject Notebook</h3><div class="price">$4.79</div>
+<button onclick="addToCart('Five Star 3-Subject Notebook',4.79)">Add to cart</button></div></article>
+<article class="product" data-cat="Notebooks">
+<img src="images/product-5.jpg" alt="Five Star 5-Subject Notebook" loading="lazy">
+<div class="info"><span>Notebooks</span><h3>Five Star 5-Subject Notebook</h3><div class="price">$6.99</div>
+<button onclick="addToCart('Five Star 5-Subject Notebook',6.99)">Add to cart</button></div></article>
 <article class="product" data-cat="Craft">
-<img src="images/p8.jpg" alt="School Scissors" loading="lazy">
-<div class="pad"><span class="tag">Craft</span><h3>School Scissors</h3><p class="price">$3.99</p>
-<button onclick="addToCart('School Scissors', '$3.99')">Add to cart</button></div></article>
+<img src="images/product-6.jpg" alt="Elmer's Purple Glue Sticks, 2 Count" loading="lazy">
+<div class="info"><span>Craft</span><h3>Elmer's Purple Glue Sticks, 2 Count</h3><div class="price">$1.68</div>
+<button onclick="addToCart('Elmer\'s Purple Glue Sticks, 2 Count',1.68)">Add to cart</button></div></article>
 <article class="product" data-cat="Craft">
-<img src="images/p9.jpg" alt="Glue Sticks – 6 Pack" loading="lazy">
-<div class="pad"><span class="tag">Craft</span><h3>Glue Sticks – 6 Pack</h3><p class="price">$4.99</p>
-<button onclick="addToCart('Glue Sticks – 6 Pack', '$4.99')">Add to cart</button></div></article>
+<img src="images/product-7.jpg" alt="Elmer's Purple Glue Sticks, 6 Count" loading="lazy">
+<div class="info"><span>Craft</span><h3>Elmer's Purple Glue Sticks, 6 Count</h3><div class="price">$3.53</div>
+<button onclick="addToCart('Elmer\'s Purple Glue Sticks, 6 Count',3.53)">Add to cart</button></div></article>
+<article class="product" data-cat="Craft">
+<img src="images/product-8.jpg" alt="Fiskars Kids School Scissors, 5 in." loading="lazy">
+<div class="info"><span>Craft</span><h3>Fiskars Kids School Scissors, 5 in.</h3><div class="price">$3.70</div>
+<button onclick="addToCart('Fiskars Kids School Scissors, 5 in.',3.7)">Add to cart</button></div></article>
+<article class="product" data-cat="Craft">
+<img src="images/product-9.jpg" alt="Fiskars Student Scissors, 7 in." loading="lazy">
+<div class="info"><span>Craft</span><h3>Fiskars Student Scissors, 7 in.</h3><div class="price">$4.48</div>
+<button onclick="addToCart('Fiskars Student Scissors, 7 in.',4.48)">Add to cart</button></div></article>
 <article class="product" data-cat="Math">
-<img src="images/p10.jpg" alt="Geometry Ruler Set" loading="lazy">
-<div class="pad"><span class="tag">Math</span><h3>Geometry Ruler Set</h3><p class="price">$6.49</p>
-<button onclick="addToCart('Geometry Ruler Set', '$6.49')">Add to cart</button></div></article>
-<article class="product" data-cat="Math">
-<img src="images/p11.jpg" alt="Scientific Calculator" loading="lazy">
-<div class="pad"><span class="tag">Math</span><h3>Scientific Calculator</h3><p class="price">$18.99</p>
-<button onclick="addToCart('Scientific Calculator', '$18.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Writing">
-<img src="images/p12.jpg" alt="Blue Pens – 12 Pack" loading="lazy">
-<div class="pad"><span class="tag">Writing</span><h3>Blue Pens – 12 Pack</h3><p class="price">$6.99</p>
-<button onclick="addToCart('Blue Pens – 12 Pack', '$6.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Writing">
-<img src="images/p13.jpg" alt="Mechanical Pencils" loading="lazy">
-<div class="pad"><span class="tag">Writing</span><h3>Mechanical Pencils</h3><p class="price">$5.49</p>
-<button onclick="addToCart('Mechanical Pencils', '$5.49')">Add to cart</button></div></article>
-<article class="product" data-cat="Writing">
-<img src="images/p14.jpg" alt="Highlighters – 6 Pack" loading="lazy">
-<div class="pad"><span class="tag">Writing</span><h3>Highlighters – 6 Pack</h3><p class="price">$7.49</p>
-<button onclick="addToCart('Highlighters – 6 Pack', '$7.49')">Add to cart</button></div></article>
-<article class="product" data-cat="Accessories">
-<img src="images/p15.jpg" alt="Pencil Case" loading="lazy">
-<div class="pad"><span class="tag">Accessories</span><h3>Pencil Case</h3><p class="price">$9.99</p>
-<button onclick="addToCart('Pencil Case', '$9.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Accessories">
-<img src="images/p16.jpg" alt="Lunch Box" loading="lazy">
-<div class="pad"><span class="tag">Accessories</span><h3>Lunch Box</h3><p class="price">$16.99</p>
-<button onclick="addToCart('Lunch Box', '$16.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Accessories">
-<img src="images/p17.jpg" alt="Water Bottle" loading="lazy">
-<div class="pad"><span class="tag">Accessories</span><h3>Water Bottle</h3><p class="price">$14.99</p>
-<button onclick="addToCart('Water Bottle', '$14.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Organization">
-<img src="images/p18.jpg" alt="Binder – 3 Ring" loading="lazy">
-<div class="pad"><span class="tag">Organization</span><h3>Binder – 3 Ring</h3><p class="price">$7.99</p>
-<button onclick="addToCart('Binder – 3 Ring', '$7.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Organization">
-<img src="images/p19.jpg" alt="Folder Set – 8 Pack" loading="lazy">
-<div class="pad"><span class="tag">Organization</span><h3>Folder Set – 8 Pack</h3><p class="price">$9.49</p>
-<button onclick="addToCart('Folder Set – 8 Pack', '$9.49')">Add to cart</button></div></article>
-<article class="product" data-cat="Organization">
-<img src="images/p20.jpg" alt="Sticky Notes Pack" loading="lazy">
-<div class="pad"><span class="tag">Organization</span><h3>Sticky Notes Pack</h3><p class="price">$5.99</p>
-<button onclick="addToCart('Sticky Notes Pack', '$5.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Writing">
-<img src="images/p21.jpg" alt="Erasers – 10 Pack" loading="lazy">
-<div class="pad"><span class="tag">Writing</span><h3>Erasers – 10 Pack</h3><p class="price">$3.49</p>
-<button onclick="addToCart('Erasers – 10 Pack', '$3.49')">Add to cart</button></div></article>
-<article class="product" data-cat="Organization">
-<img src="images/p22.jpg" alt="Desk Organizer" loading="lazy">
-<div class="pad"><span class="tag">Organization</span><h3>Desk Organizer</h3><p class="price">$13.99</p>
-<button onclick="addToCart('Desk Organizer', '$13.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Study">
-<img src="images/p23.jpg" alt="Index Cards" loading="lazy">
-<div class="pad"><span class="tag">Study</span><h3>Index Cards</h3><p class="price">$4.99</p>
-<button onclick="addToCart('Index Cards', '$4.99')">Add to cart</button></div></article>
-<article class="product" data-cat="Study">
-<img src="images/p24.jpg" alt="Graph Paper Notebook" loading="lazy">
-<div class="pad"><span class="tag">Study</span><h3>Graph Paper Notebook</h3><p class="price">$6.99</p>
-<button onclick="addToCart('Graph Paper Notebook', '$6.99')">Add to cart</button></div></article></div>
-</main>
-<section class="help" id="advice"><div><span class="eyebrow">FREE GUIDANCE</span><h2>Not sure what your student needs?</h2><p>Our school-supply advisors can help you build a list by grade, class or budget.</p><a class="cta" href="tel:+18005550148">Call an advisor</a></div><div class="advisor">📚<h3>School Supply Advice</h3><p>Personalized recommendations for students, parents and teachers.</p><b>1-800-555-0148</b><small>Mon–Sat • 9 AM–6 PM</small></div></section>
-<section class="support" id="support"><h2>Need help with an order?</h2><p>Our support team can assist with products, orders, returns and school lists.</p><div><a href="tel:+18005550148">☎ 1-800-555-0148</a><a href="mailto:support@brightdesk.example">✉ support@brightdesk.example</a></div><p class="demo">Demo contact information — replace with your real business phone and email before publishing.</p></section>
-<footer><div class="brand">🎒 <span>BrightDesk</span></div><p>School supplies made simple.</p><p>© 2026 BrightDesk. All rights reserved.</p></footer>
-<div id="cartPanel" class="panel"><button onclick="closeCart()">×</button><h2>Your cart</h2><div id="cartItems"></div><p class="total">Items: <span id="cartTotal">0</span></p></div>
-<script src="script.js"></script>
-</body></html>
+<img src="images/product-10.jpg" alt="TI-30XIIS Scientific Calculator" loading="lazy">
+<div class="info"><span>Math</span><h3>TI-30XIIS Scientific Calculator</h3><div class="price">$13.88</div>
+<button onclick="addToCart('TI-30XIIS Scientific Calculator',13.88)">Add to cart</button></div></article>
+<article class="product" data-cat="Art">
+<img src="images/product-11.jpg" alt="Crayola Twistables Colored Pencils, 12 Count" loading="lazy">
+<div class="info"><span>Art</span><h3>Crayola Twistables Colored Pencils, 12 Count</h3><div class="price">$4.97</div>
+<button onclick="addToCart('Crayola Twistables Colored Pencils, 12 Count',4.97)">Add to cart</button></div></article>
+<article class="product" data-cat="Notebooks">
+<img src="images/product-12.jpg" alt="Five Star 5-Subject College Ruled Notebook" loading="lazy">
+<div class="info"><span>Notebooks</span><h3>Five Star 5-Subject College Ruled Notebook</h3><div class="price">$6.97</div>
+<button onclick="addToCart('Five Star 5-Subject College Ruled Notebook',6.97)">Add to cart</button></div></article></div><p class="price-note">Price reference updated September 2026. Retail prices can change and may vary by seller, color, location or promotion.</p></main>
+<section class="advice" id="advice"><div><span>FREE GUIDANCE</span><h2>Need a school supply list?</h2><p>We can help parents, students and teachers choose supplies by grade, subject or budget.</p><a href="#support">Talk to an advisor</a></div><div class="card"><b>School Supply Advisor</b><p>Product guidance • School lists • Bulk orders</p><strong>1-800-555-0148</strong><small>Demo number — replace before launch</small></div></section>
+<section class="support" id="support"><h2>Customer Support</h2><p>Questions about products, orders or school lists?</p><a href="tel:+18005550148">☎ 1-800-555-0148</a><a href="mailto:support@brightdesk.example">✉ support@brightdesk.example</a><small>Demo contact details. Replace with your real business information.</small></section>
+<footer><img src="images/logo.jpg" alt=""><b>BrightDesk School Supplies</b><p>© 2026 BrightDesk. All rights reserved.</p></footer>
+<aside id="panel"><button onclick="toggleCart()">×</button><h2>Your cart</h2><div id="items"></div><h3>Total: $<span id="total">0.00</span></h3></aside><script src="script.js"></script></body></html>

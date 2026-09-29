@@ -1,9 +1,14 @@
-# BrightDesk School Supplies
+# BrightDesk School Supplies — Updated
 
-A responsive school-supplies storefront demo with product images, prices, category filters, search, shopping cart UI, support and school-supply advisory sections.
+This version includes:
+- Visible site logo in the header and browser favicon.
+- Local product images, so they load reliably on GitHub Pages.
+- Current retail price references researched in September 2026.
+- Product search, category filters and cart interface.
+- Support and school-supply advisory sections.
 
-## Run
-Open `index.html` in a browser, or deploy the folder to GitHub Pages / Netlify / Vercel.
+## Important
+Retail prices are reference prices and can change. Replace the demo phone number and email before publishing. This static demo does not process real payments.
 
-## Before publishing
-Replace the demo phone number, email address, prices, business name, policies, and product information with your real business details. The cart is front-end only and does not process payments.
+## GitHub Pages
+Upload the CONTENTS of this folder to the repository root. `index.html`, `style.css`, `script.js`, `favicon.png` and the `images` folder must all be at the top level.
